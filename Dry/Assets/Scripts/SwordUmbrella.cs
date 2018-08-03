@@ -11,7 +11,8 @@ public class SwordUmbrella : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Breakable"))
         {
             BreakableItem breakable = other.gameObject.GetComponent<BreakableItem>();
-            if (breakable != null && PlayerController.Instance.isAttacking)
+
+            if (breakable != null && PlayerStateMachine.Instance.isAttacking)
             {
                 breakable.Break();
             }

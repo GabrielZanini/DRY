@@ -33,17 +33,17 @@ public class PlayerController : MonoBehaviour {
      *                         *
      * ------------------------*/
     public bool jumping;
-     bool gliding;
+    bool gliding;
     public bool isFalling;
-     bool grabbing;
+    bool grabbing;
     public bool facingRight = true;
-     bool canGrind;
-     bool grinding;
-     bool walkingOnWater;
-     bool umbrella;
+    bool canGrind;
+    bool grinding;
+    bool walkingOnWater;
+    bool umbrella;
     public bool isAttacking;
-     public bool changeUmbrella;
-     float h;
+    public bool changeUmbrella;
+    float h;
     public bool isGrabbedOnWall;
     bool noToldo;
     bool Dead;
@@ -155,13 +155,11 @@ public class PlayerController : MonoBehaviour {
             }
             anim.SetBool("Running", true);
         }
-
         else if(/*h == 0 && Input.GetMouseButtonDown(0) || */h == 0 && Input.GetKeyDown(KeyCode.C))
         {
             anim.SetBool("Running", false);
             audioSource.Stop();
         }
-
         else
         {
             anim.SetBool("Running", false);

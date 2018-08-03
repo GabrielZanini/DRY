@@ -13,7 +13,7 @@ public class WindArea : MonoBehaviour {
         if (other.tag == "Player")
         {
             Debug.Log("Trigger Player");
-            if (!PlayerController.Instance.umbrellaOpen && Input.GetButton("Jump"))
+            if (PlayerStateMachine.Instance.isGliding)
             {
                 Debug.Log("Trigger Player umbrellaOpen");
                 Rigidbody rigid = other.gameObject.GetComponent<Rigidbody>();

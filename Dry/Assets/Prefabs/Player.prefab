@@ -1978,7 +1978,7 @@ GameObject:
   - component: {fileID: 136922222406535242}
   - component: {fileID: 82511300661856330}
   - component: {fileID: 95345419226457738}
-  - component: {fileID: 114620986879454380}
+  - component: {fileID: 114052217513445758}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3918,8 +3918,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951902845494390}
-  m_LocalRotation: {x: 0, y: 0.7096937, z: 0, w: 0.7045104}
-  m_LocalPosition: {x: -8.13, y: 1.775, z: 1.05}
+  m_LocalRotation: {x: -0, y: 0.69712883, z: -0, w: 0.7169459}
+  m_LocalPosition: {x: 31.45, y: 0.46, z: 1.52}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4823870369258484}
@@ -3927,7 +3927,7 @@ Transform:
   - {fileID: 4594682999895248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90.42, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.394005, z: 0}
 --- !u!4 &4994370076736284
 Transform:
   m_ObjectHideFlags: 1
@@ -4053,10 +4053,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65444987146102862
 BoxCollider:
@@ -4231,6 +4231,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114052217513445758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951902845494390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e97f6e5c02a664889421beea7101ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  playerDamage: {fileID: 0}
+  speed: 3
+  isFacingRight: 1
+  isGrounded: 0
+  isOnWater: 0
+  isTouchingWallEdge: 0
+  jumpForce: 6
+  glidingForce: 9
+  walkable:
+    serializedVersion: 2
+    m_Bits: 1552
+  isUmbrellaOpen: 0
+  umbrellaOpen: {fileID: 1155820215641792}
+  umbrellaClosed: {fileID: 1558555842973054}
+  animatorUmbrella: {fileID: 95968400594047834}
+  isGliding: 0
+  isAttacking: 0
+  isHooking: 0
+  isGrabbing: 0
+  horizontal: 0
+  InputJump: 0
+  InputJumpDown: 0
+  InputAttack: 0
+  InputGrab: 0
+  rigidbody: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &114295944312958156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4242,7 +4280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65f71844ce99534c970cf8018381730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PlayerController: {fileID: 114620986879454380}
+  _PlayerController: {fileID: 0}
   close: 0
 --- !u!114 &114331016123305804
 MonoBehaviour:
@@ -4255,7 +4293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65f71844ce99534c970cf8018381730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PlayerController: {fileID: 114620986879454380}
+  _PlayerController: {fileID: 0}
   close: 0
 --- !u!114 &114579960621719586
 MonoBehaviour:
@@ -4268,45 +4306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cbbbc20d8680b429a3802792ccb022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114620986879454380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951902845494390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9788f7ccbdaa9ca4796cb7d28c624d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  jumpForce: 7.5
-  closedUmbrella: {fileID: 1558555842973054}
-  openedUmbrella: {fileID: 1155820215641792}
-  holder: {fileID: 1453955391512792}
-  holder1: {fileID: 1453955391512792}
-  holder2: {fileID: 1826759089331048}
-  inicio: {fileID: 0}
-  fim: {fileID: 0}
-  _SoundScript: {fileID: 0}
-  animUmbrella: {fileID: 95968400594047834}
-  audioSource: {fileID: 82511300661856330}
-  walking: {fileID: 8300000, guid: 8ab4637a6ff009e4193378e71c747d3d, type: 3}
-  walkingOnPuddle: {fileID: 8300000, guid: e90ec1d05cc7b7c4288036eb238613c2, type: 3}
-  swoosh1: {fileID: 8300000, guid: 5994d6b09c60db84bae9c4704f6175e6, type: 3}
-  swoosh2: {fileID: 8300000, guid: 0baed24b14c3ea04eaa277a3b6ae290a, type: 3}
-  swoosh3: {fileID: 8300000, guid: 0f03735e64231b740ba8ce5d516ed2f9, type: 3}
-  open: {fileID: 8300000, guid: 87e318391d54c2741ab8fa3efdb16b00, type: 3}
-  close: {fileID: 8300000, guid: 0b1496448bd37a04095a63a0799fcce9, type: 3}
-  landing: {fileID: 8300000, guid: 6f6845d3dd7396145b7a1f92353ff6f7, type: 3}
-  jumping: 0
-  isFalling: 0
-  facingRight: 1
-  isAttacking: 0
-  changeUmbrella: 0
-  isGrabbedOnWall: 0
-  umbrellaOpen: 1
-  hp: 0
 --- !u!136 &136922222406535242
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4317,9 +4316,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
-  m_Height: 5.606365
+  m_Height: 5.7
   m_Direction: 1
-  m_Center: {x: -0, y: 2.9, z: 0}
+  m_Center: {x: -0, y: 2.8, z: 0}
 --- !u!137 &137355231899557452
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
