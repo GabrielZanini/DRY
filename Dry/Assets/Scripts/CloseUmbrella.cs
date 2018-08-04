@@ -9,6 +9,6 @@ public class CloseUmbrella : MonoBehaviour {
 
 	public void Umbrella()
     {
-        _PlayerController.changeUmbrella = true;
+        //_PlayerController.changeUmbrella = true;
     }
 }

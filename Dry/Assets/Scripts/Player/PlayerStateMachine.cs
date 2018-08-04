@@ -25,6 +25,7 @@ public class PlayerStateMachine : MonoBehaviour
     public bool isUmbrellaOpen;
     public GameObject umbrellaOpen;
     public GameObject umbrellaClosed;
+    public Transform GrabbingPoint;
     public Animator animatorUmbrella;
 
     [Header("Actions")]
@@ -41,6 +42,7 @@ public class PlayerStateMachine : MonoBehaviour
     [HideInInspector] public bool InputGrab;
     [HideInInspector] public Rigidbody rigidbody;
     [HideInInspector] public Animator animator;
+
     RaycastHit _hit;
     WallEdge _wallEdge;
 
@@ -239,15 +241,27 @@ public class PlayerStateMachine : MonoBehaviour
     {
         if (InputGrab && !isUmbrellaOpen)
         {
-            SetState(new Grabbing(this));
+            SetState(new Hooking(this));
         }
     }
 
-    public void Grabbing()
+    //public void Grabbing()
+    //{
+    //    if (InputGrab && !isUmbrellaOpen && isTouchingWallEdge)
+    //    {
+    //        SetState(new Grabbing(this));
+    //    }
+    //}
+
+    public void GrabbingPosition()
     {
-        if (InputGrab && !isUmbrellaOpen && isTouchingWallEdge)
+        //transform.position = Vector3.Lerp(transform.position, _wallEdge.playerPosition.position - (GrabbingPoint.position - transform.position), 10f * Time.deltaTime);
+        transform.position = _wallEdge.playerPosition.position - (GrabbingPoint.position - transform.position);
+
+        if (isFacingRight != _wallEdge.playerFacingRight)
         {
-            SetState(new Grabbing(this));
+            isFacingRight = _wallEdge.playerFacingRight;
+            transform.Rotate(0, 180, 0);
         }
     }
 
@@ -264,6 +278,16 @@ public class PlayerStateMachine : MonoBehaviour
             isTouchingWallEdge = true;
         }    
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "WallEdge")
+        {
+            _wallEdge = null;
+            isTouchingWallEdge = false;
+        }
+    }
+
 
     #endregion
 }

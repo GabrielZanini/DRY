@@ -26,6 +26,7 @@ public class Gliding : PlayerState
         else
         {
             player.Attacking();
+            player.Hooking();
         }       
     }
 

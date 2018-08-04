@@ -23,6 +23,7 @@ public class Jumping : PlayerState
         else
         {
             player.Attacking();
+            player.Hooking();
         }
     }
 

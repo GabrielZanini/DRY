@@ -28,6 +28,7 @@ public class Falling : PlayerState
             else
             {
                 player.Attacking();
+                player.Hooking();
             }
         }        
     }

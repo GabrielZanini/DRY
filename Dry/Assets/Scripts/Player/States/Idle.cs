@@ -26,6 +26,7 @@ public class Idle : PlayerState
         else
         {
             player.Attacking();
+            player.Hooking();
         }
     }
 

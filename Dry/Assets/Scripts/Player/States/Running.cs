@@ -27,6 +27,7 @@ public class Running : PlayerState
         else
         {
             player.Attacking();
+            player.Hooking();
         }
     }
 
